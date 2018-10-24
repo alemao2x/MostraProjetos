@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin: 0;
     font-family: Lato;
+    color: #333;
 }
 
 .navbar{
@@ -42,32 +43,202 @@ body{
 
 .content{
     margin-top: 80px;
-    height: 100vh;
+    padding-bottom: 80px;
 }
 
-.content h1{
+.banner{
+    margin-top: 80px;
+    width: 98.8vw;
+    height: 80vh;
+    background: linear-gradient( rgba(40, 43, 52, 0.5),
+    rgba(40, 43, 52, 0.5)), url('../img/list_v_smith-1038x576.jpg')
+    fixed
+    center;
+    background-size: cover;
+    padding-top: 30vh;
+}
+
+.banner h1{
+    color: #fff;
+    font-size: 50px;
+}
+
+.content h2{
     color: #444;
+    font-size: 40px;
 }
 
 .content .card-grid{
     display: grid;
     padding-top: 50px;
+    padding-bottom: 50px;
+    grid-template-areas: 'text-1 text-2';
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 500px;
+    grid-template-rows: fit-content;
     grid-gap: 30px;
+    box-shadow: 0px 0px 16px 6px rgba(231, 225, 231, 0.993);
+    border-radius: .5rem;
+    background: white;
 }
 
 .content .card-grid .box-1{
     grid-column-start: 1;
     grid-column-end: 2;
+    margin-left: 25px;
+    border-bottom: 50px solid #a51c31e3;
+    grid-area: text-1;
     box-shadow: 0px 0px 16px 6px rgba(247,239,247,1);
-    border-bottom: 50px solid #ddd
+    border-radius: .5rem;
 }
 
 .content .card-grid .box-2{
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row: 1;
+    margin-right: 25px;
+    border-bottom: 50px solid #a51c31e3;
+    grid-area: text-2;
     box-shadow: 0px 0px 16px 6px rgba(247,239,247,1);
-    border-bottom: 50px solid #ddd
+    border-radius: .5rem;
+}
+
+.content .card-grid .box-1 .text, .content .card-grid .box-2 .text{
+    margin: 0px 15px;
+    text-align: justify;
+}
+
+@media only screen and (max-width:767px){
+    .content .card-grid{
+        grid-template-columns: 95%;
+        grid-template-rows: fit-content fit-content;
+        grid-area: 
+        'text-1' 
+        'text-2';
+    }
+    .content .card-grid .box-1{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        margin-left: 25px;
+    }
+    
+    .content .card-grid .box-2{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-right: 0;
+        margin-left: 25px;
+    }
+}
+
+.content .imgwrapper{
+    background: white;
+    padding: 15px;
+    border-radius: .5rem;
+}
+
+.content .videos{
+    box-shadow: 0px 0px 16px 6px rgba(231, 225, 231, 0.993);
+    border-radius: .5rem;
+    background: white;
+    padding: 15px;
+}
+
+.content .videos .videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+    height: 0;
+    margin-bottom: 30px;
+}
+
+.content .videos .videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.content .book-grid{
+    display: grid;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    grid-template-areas: 'book book book';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+}
+
+.content .book-grid .book{
+    grid-area: book;
+    padding: 10px;
+    border-radius: .5rem;
+}
+
+.content .book-grid .book img{
+    max-width: 200px;
+}
+
+.content .book-grid .one{
+    background: #fff;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.content .book-grid .two{
+    background: #fff;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.content .book-grid .three{
+    background: #fff;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+@media only screen and (max-width:767px){
+    .content .book-grid{
+        display: grid;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        grid-template-areas: 'book' 'book' 'book';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    
+    .content .book-grid .book{
+        grid-area: book;
+    }
+    
+    .content .book-grid .one{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    
+    .content .book-grid .two{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    
+    .content .book-grid .three{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+}
+
+.content .book-grid figcaption{
+    font-weight: bold;
+}
+
+.content .book-grid figcaption span{
+    display: block;
 }
